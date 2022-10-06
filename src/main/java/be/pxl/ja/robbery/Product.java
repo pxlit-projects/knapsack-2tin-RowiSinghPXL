@@ -11,7 +11,7 @@ public class Product implements Comparable<Product> {
     public Product() {
     }
 
-    public Product(String name, double price, double weight){
+    public Product(String name, double weight, double price){
         this.name = name;
         this.price = price;
         this.weight = weight;
@@ -49,11 +49,6 @@ public class Product implements Comparable<Product> {
 
     @Override
     public int compareTo(Product product){
-        if(this.price > product.price){
-            return -1;
-        } else if(this.price == product.price){
-            return 0;
-        }
-        return 1;
+        return Double.compare(this.price, product.price);
     }
 }
