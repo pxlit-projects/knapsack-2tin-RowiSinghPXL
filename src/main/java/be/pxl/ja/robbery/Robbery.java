@@ -9,7 +9,12 @@ public class Robbery {
         shop.add(new Product("laptop", 20, 2000));
         shop.add(new Product("guitar", 15, 1500));
 
-        KnapsackUtil.fill(knapsack, shop);
+        try{
+            KnapsackUtil.fill(knapsack, shop);
+        } catch (KnapsackFullException ex) {
+            System.out.println("Error knapsack maximum capacity - " + ex.getMessage());
+        }
+
 
         System.out.println("\nList of products:");
         for (Product product : knapsack.getItems()) {
