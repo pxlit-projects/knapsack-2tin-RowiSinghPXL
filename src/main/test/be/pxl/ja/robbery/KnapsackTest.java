@@ -9,7 +9,7 @@ import java.util.List;
 public class KnapsackTest {
 
     @Test
-    public void getCurrentWeight(){
+    public void getCurrentWeight() throws KnapsackFullException{
         Knapsack knapsack = new Knapsack(30.0);
 
         //name weight price ==> product
@@ -23,4 +23,6 @@ public class KnapsackTest {
 
         Assertions.assertEquals(25.0, knapsack.getCurrentWeight());
     }
+
+
 }
