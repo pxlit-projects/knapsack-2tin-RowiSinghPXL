@@ -12,11 +12,17 @@ public class Knapsack {
     }
 
     public double getCurrentWeight(){
-
-        return 0.0;
+        double currentWeight = 0.0;
+        for(Product product : items){
+            currentWeight += product.getWeight();
+        }
+        return currentWeight;
     }
 
-    public void add(Product product){
+    public void add(Product product)throws KnapsackFullException{
+        if(getCurrentWeight() + product.getWeight() > this.maximumCapacity){
+            throw new KnapsackFullException();
+        }
         items.add(product);
     }
 
