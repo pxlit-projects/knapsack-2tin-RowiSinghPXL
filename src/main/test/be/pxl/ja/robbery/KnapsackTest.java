@@ -24,5 +24,15 @@ public class KnapsackTest {
         Assertions.assertEquals(25.0, knapsack.getCurrentWeight());
     }
 
+    @Test
+    public void addProductTooHeavyTest() throws KnapsackFullException{
+        Product product1 = new Product("product1", 34.0, 25.00);
+        Knapsack knapsack = new Knapsack(32.0);
 
+       KnapsackFullException thrown = Assertions.assertThrows(KnapsackFullException.class,
+               () -> knapsack.add(product1));
+       
+        Assertions.assertEquals(0, knapsack.getItems().size());
+
+    }
 }
