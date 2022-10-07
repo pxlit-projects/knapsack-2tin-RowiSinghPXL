@@ -21,7 +21,7 @@ public class Knapsack {
 
     public void add(Product product)throws KnapsackFullException{
         if(getCurrentWeight() + product.getWeight() > this.maximumCapacity){
-            throw new KnapsackFullException();
+            throw new KnapsackFullException("Cannot add product " + product.getName() + ". Maximum capacity reached");
         }
         items.add(product);
     }

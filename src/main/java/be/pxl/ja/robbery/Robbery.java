@@ -12,7 +12,7 @@ public class Robbery {
         try{
             KnapsackUtil.fill(knapsack, shop);
         } catch (KnapsackFullException ex) {
-            System.out.println("Error knapsack maximum capacity - " + ex.getMessage());
+            System.out.println(ex.getMessage());
         }
 
 
